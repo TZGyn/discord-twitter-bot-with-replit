@@ -74,23 +74,6 @@ async def follow(ctx, arg = "@"):
         await ctx.send("Following cancelled")
 
 @bot.command()
-async def batchfollow(ctx, arg = ''):
-  user_list = db["users"].value
-
-  lst = arg.split(',')
-  for username in lst:
-    if user_list.__contains__(username) == False:
-        value = db["users"].value
-        value.append(username)
-        db["users"] = value
-
-        manage_list.set_key(username)
-
-    channelID = ctx.message.channel.id
-    manage_list.add_channel(channelID, username)
-    await ctx.send("Start getting new tweets from @" + username)
-
-@bot.command()
 async def stopfollow(ctx, arg = "@"):
     username = arg.strip("@")
     await ctx.send("Stop follow this channel? [Y/N]: https://twitter.com/" + username)
