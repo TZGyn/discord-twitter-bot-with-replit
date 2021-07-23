@@ -4,6 +4,7 @@ def add_user(user: str):
     value = db["users"]
     value.append(user)
     db["users"] = value
+    
 
 def add_channel(ids: int, user: str):
     channel_list = db[user + "_server"]
@@ -12,19 +13,12 @@ def add_channel(ids: int, user: str):
         value = db[user + "_server"]
         value.append(str(ids))
         db[user + "_server"] = value
-
+        
 
 def get_channel_id(user: str):
     channel_list = db[user + "_server"].value
-    return channel_list
+    return channel_list 
 
-def clear_notif_hist(username: str):
-    history = db[username].value
-    while len(history) > 5:
-      history = history[1:]
-
-    db[username] = history
-    
 
 def get_followlist(channelID):
     user_list = db["users"].value
@@ -81,9 +75,3 @@ def clear():
 
 if __name__ == "__main__":
     print(db["users"].value)
-    # print(db["tsunomakiwatame"].value)
-    # user_list = db["users"].value
-    # for user in user_list:
-    #   print(db[str(user)].value)
-
-    # print(sorted(db.keys()))
