@@ -28,7 +28,6 @@ async def get_ID():
         if len(channel_list) != 0:
             ids, username = get_tweet_id(user)
             if ids != None:
-                # manage_list.clear_notif_hist(username)
                 for channel in channel_list:
                     if channel != "":
                       try:
@@ -40,13 +39,14 @@ async def get_ID():
                       except KeyError:
                           msg = bot.get_channel(int(channel))
                           await msg.send(username + " just tweeted: https://twitter.com/" + username + "/status/" + str(ids))
+			# Change the delay (in seconds) in the bracket
             await asyncio.sleep(2)
-                    
+
 @bot.command()
 async def follow(ctx, arg = "@"):
     username = arg.strip("@")
     await ctx.send("Follow this channel? [Y/N]: https://twitter.com/" + username)
-    
+
     def check(msg):
         return msg.author == ctx.author and msg.channel == ctx.channel and msg.content.lower() in ["y", "n"]
 
@@ -105,7 +105,7 @@ async def stopfollow(ctx, arg = "@"):
 @bot.command()
 async def followlist(ctx):
     followlist = manage_list.get_followlist(ctx.message.channel.id)
-    
+
     print_follow = ""
     for follow in sorted(followlist):
         print_follow += follow
@@ -122,7 +122,7 @@ async def mention(ctx, arg : discord.Role):
     db["channel_" + str(ctx.message.channel.id)] = [serverID, roleID]
     value = db["channel_" + str(ctx.message.channel.id)].value
     role = discord.utils.get(bot.get_guild(value[0]).roles, id = value[1])
-    await ctx.send("mention updated {}".format(role.mention)) 
+    await ctx.send("mention updated {}".format(role.mention))
 
 @bot.command()
 async def removemention(ctx):
