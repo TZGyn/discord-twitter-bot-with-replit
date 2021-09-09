@@ -12,12 +12,15 @@ from replit import db
 bot = commands.Bot(command_prefix = "-")
 
 
+# Startup message
 @bot.event
 async def on_ready():
     print("{0.user} is in ".format(bot) + str(len(bot.guilds)) + " server(s)")
-    print("{0.user} is fking online".format(bot))
+    print("{0.user} is online".format(bot))
     get_ID.start()
 
+
+# Getting and sending new tweets
 @tasks.loop(seconds=0)
 async def get_ID():
 
@@ -42,10 +45,13 @@ async def get_ID():
 			# Change the delay (in seconds) in the bracket
             await asyncio.sleep(2)
 
+
+# Command in discord to follow a user
+# Change the function name is the command name, change it to your desired name
 @bot.command()
 async def follow(ctx, arg = "@"):
     username = arg.strip("@")
-    await ctx.send("Follow this channel? [Y/N]: https://twitter.com/" + username)
+    await ctx.send("Follow this user? [Y/N]: https://twitter.com/" + username)
 
     def check(msg):
         return msg.author == ctx.author and msg.channel == ctx.channel and msg.content.lower() in ["y", "n"]
@@ -73,6 +79,9 @@ async def follow(ctx, arg = "@"):
     except:
         await ctx.send("Following cancelled")
 
+
+# Command in discord to unfollow a user
+# Change the function name is the command name, change it to your desired name
 @bot.command()
 async def stopfollow(ctx, arg = "@"):
     username = arg.strip("@")
@@ -102,6 +111,9 @@ async def stopfollow(ctx, arg = "@"):
     except:
         await ctx.send("Cancelled")
 
+
+# Command in discord to display the user followed (each channel is different)
+# Change the function name is the command name, change it to your desired name
 @bot.command()
 async def followlist(ctx):
     followlist = manage_list.get_followlist(ctx.message.channel.id)
@@ -115,6 +127,9 @@ async def followlist(ctx):
 
     await ctx.send(embed = embed)
 
+
+# Command in discord to include mentioning when displaying new tweets, ex. (-mention @NotificationGroup)
+# Change the function name is the command name, change it to your desired name
 @bot.command()
 async def mention(ctx, arg : discord.Role):
     serverID = ctx.guild.id
@@ -124,9 +139,14 @@ async def mention(ctx, arg : discord.Role):
     role = discord.utils.get(bot.get_guild(value[0]).roles, id = value[1])
     await ctx.send("mention updated {}".format(role.mention))
 
+
+# Command in discord to remove the mentioning
+# Change the function name is the command name, change it to your desired name
 @bot.command()
 async def removemention(ctx):
     db["channel_" + str(ctx.message.channel.id)] = []
 
+
+# Starts the bot
 running()
 bot.run(os.environ['bot_token'])
