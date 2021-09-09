@@ -7,10 +7,10 @@
 <p>A twitter developer account</p>
 
 ## Installation
-<p>Download the code and upload it to replit, create a .env file with the following properties</p>
 <p>Create a twitter app in your <a href='https://developers.twitter.com/'>twitter developer portal</a>
 , remember to keep the keys as it will only be shown on the creation of the app, otherwise have to be regenerated.</p>
 <p>Create a discord bot application in your <a href= 'https://discord.com/developers'>discord developer portal</a> with channel permissions and remember the bot token<p>
+<p>Download the code and upload it to replit, create a .env file with the following properties</p>
 
 <p><b>The following 4 keys are obtained in your <a href='https://developers.twitter.com/'>twitter developer portal</a></b></p>
 <p>ACCESS_KEY</p>
