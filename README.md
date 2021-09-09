@@ -17,4 +17,4 @@
 <p>bot_token, this is the bot token generated on discord developer portal</p>
 
 ## Custom settings
-<p>On the free plan of a twitter developer account, the limit is one request a second. The delay of each request in the code is 3 seconds, change it by going to main.py and manually change the async time to your desired amount.</p>
+<p>On the free plan of a twitter developer account, the limit is one request a second. The delay of each request in the code is 2 seconds, change it by going to main.py and manually change the async time to your desired amount.</p>
