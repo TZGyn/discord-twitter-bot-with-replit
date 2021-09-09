@@ -8,7 +8,7 @@
 ## Installation
 <p>Download the code and upload it to replit, create a .env file with the following properties</p>
 
-<p><b>The following 4 keys are obtained in your twitter developer portal</b></p>
+<p><b>The following 4 keys are obtained in your <a href='https://developer.twitter.com/en/portal/projects-and-apps'>twitter developer portal<a></b></p>
 <p>ACCESS_KEY</p>
 <p>ACCESS_SECRET</p>
 <p>CONSUMER_KEY</p>
