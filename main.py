@@ -129,6 +129,7 @@ async def followlist(ctx):
 
 
 # Command in discord to include mentioning when displaying new tweets, ex. (-mention @NotificationGroup)
+# Note: default roles such as @everyone may not work, create a new role to avoid that
 # Change the function name is the command name, change it to your desired name
 @bot.command()
 async def mention(ctx, arg : discord.Role):
