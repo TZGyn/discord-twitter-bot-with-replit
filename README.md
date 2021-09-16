@@ -1,7 +1,7 @@
 # Twitter notification on discord
 <p>You are free to distribute and modify the code</p>
 
-## Pre-requisites
+## Requirements
 <p>A discord developer account to create a bot token for the discord bot</p>
 <p>An account on replit</p>
 <p>A twitter developer account</p>
