@@ -33,6 +33,7 @@
 <p>The code will run prefectly on replit but if the session is closed for more than an hour, replit will push the code into a idle state. The bot will enter a sleep mode and can be re-activate by logging back the replit account and open the code.</p>
 <p><b>To prevent the bot to enter sleep mode</b></p>
 <p>Constantly ping your bot, I recommend using <a href=https://uptimerobot.com/>UptimeRobot</a></p>
+<p><b>How to use UptimeRobot</b></p>
 <p>When running the bot, you will find a box appeared on top of your console/shell showing "running" with a link on top. Copy the link.</p>
 <p>Log into your UptimeRobot account and click on "Add New Monitor" and enter the following.</p>
 <p>Monitor Type: HTTP(s)</p>
