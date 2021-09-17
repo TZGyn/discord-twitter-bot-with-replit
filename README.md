@@ -1,6 +1,6 @@
 # Twitter notification on discord
 <p>A discord bot that gets the latest tweets and display it in the text channel</p>
-<p><b><u>How to use the bot</u></b></p>
+<p><b>__How to use the bot__</b></p>
 <p>Add the bot to your server, add users to follow by typing '-follow {the tweet account id (start with @)}'</p>
 <p>The bot will start getting new tweets from the user and display it in the channel where the command is executed</p>
 
