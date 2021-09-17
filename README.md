@@ -1,6 +1,6 @@
 # Twitter notification on discord
 <p>A discord bot that gets the latest tweets and display it in the text channel</p>
-<p><b>How to use the bot</b></p>
+<p><b><u>How to use the bot</u></b></p>
 <p>Add the bot to your server, add users to follow by typing '-follow {the tweet account id (start with @)}'</p>
 <p>The bot will start getting new tweets from the user and display it in the channel where the command is executed</p>
 
@@ -15,7 +15,7 @@
 <p>Create a discord bot application in your <a href= 'https://discord.com/developers'>discord developer portal</a> with channel permissions and remember the bot token<p>
 <p>Download the code and upload it to replit, create a .env file with the following properties</p>
 
-<p><b>The following 4 keys are obtained in your <a href='https://developers.twitter.com/'>twitter developer portal</a></b></p>
+<p><b><u>The following 4 keys are obtained in your</u> <a href='https://developers.twitter.com/'>twitter developer portal</a></b></p>
 <ul>
 <li>ACCESS_KEY</li>
 <li>ACCESS_SECRET</li>
@@ -35,9 +35,9 @@
 
 ## How to keep the bot active?
 <p>The code will run prefectly on replit but if the session is closed for more than an hour, replit will push the code into a idle state. The bot will enter a sleep mode and can be re-activate by logging back the replit account and open the code.</p>
-<p><b>To prevent the bot to enter sleep mode</b></p>
+<p><b><u>To prevent the bot to enter sleep mode</u></b></p>
 <p>Constantly ping your bot, I recommend using <a href=https://uptimerobot.com/>UptimeRobot</a></p>
-<p><b>How to use UptimeRobot</b></p>
+<p><b><u>How to use UptimeRobot</u></b></p>
 <p>When running the bot, you will find a box appeared on top of your console/shell showing "running" with a link on top. Copy the link.</p>
 <p>Log into your UptimeRobot account and click on "Add New Monitor" and enter the following.</p>
 <p>Monitor Type: HTTP(s)</p>
