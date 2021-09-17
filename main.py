@@ -11,6 +11,9 @@ from replit import db
 
 bot = commands.Bot(command_prefix = "-")
 
+# Note:
+# The function name is the command name, change it to your likings
+
 
 # Startup message
 @bot.event
@@ -47,7 +50,6 @@ async def get_ID():
 
 
 # Command in discord to follow a user
-# Change the function name is the command name, change it to your desired name
 @bot.command()
 async def follow(ctx, arg = "@"):
     username = arg.strip("@")
@@ -81,7 +83,6 @@ async def follow(ctx, arg = "@"):
 
 
 # Command in discord to unfollow a user
-# Change the function name is the command name, change it to your desired name
 @bot.command()
 async def stopfollow(ctx, arg = "@"):
     username = arg.strip("@")
@@ -113,7 +114,6 @@ async def stopfollow(ctx, arg = "@"):
 
 
 # Command in discord to display the user followed (each channel is different)
-# Change the function name is the command name, change it to your desired name
 @bot.command()
 async def followlist(ctx):
     followlist = manage_list.get_followlist(ctx.message.channel.id)
@@ -130,7 +130,6 @@ async def followlist(ctx):
 
 # Command in discord to include mentioning when displaying new tweets, ex. (-mention @NotificationGroup)
 # Note: default roles such as @everyone may not work, create a new role to avoid that
-# Change the function name is the command name, change it to your desired name
 @bot.command()
 async def mention(ctx, arg : discord.Role):
     serverID = ctx.guild.id
@@ -142,7 +141,6 @@ async def mention(ctx, arg : discord.Role):
 
 
 # Command in discord to remove the mentioning
-# Change the function name is the command name, change it to your desired name
 @bot.command()
 async def removemention(ctx):
     db["channel_" + str(ctx.message.channel.id)] = []
