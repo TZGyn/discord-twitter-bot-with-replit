@@ -13,12 +13,13 @@
 <p>Download the code and upload it to replit, create a .env file with the following properties</p>
 
 <p><b>The following 4 keys are obtained in your <a href='https://developers.twitter.com/'>twitter developer portal</a></b></p>
-<p>ACCESS_KEY</p>
-<p>ACCESS_SECRET</p>
-<p>CONSUMER_KEY</p>
-<p>CONSUMER_SECRET</p>
-
-<p>bot_token, this is the bot token generated on <a href= 'https://discord.com/developers'>discord developer portal</a></p>
+<ul>
+<li>ACCESS_KEY</li>
+<li>ACCESS_SECRET</li>
+<li>CONSUMER_KEY</li>
+<li>CONSUMER_SECRET</li>
+<li>bot_token, this is the bot token generated on <a href= 'https://discord.com/developers'>discord developer portal</a></li>
+</ul>
 
 ## Commands
 <p>Default prefix= '-'</p>
