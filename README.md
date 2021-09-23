@@ -34,7 +34,7 @@
 <p>On the free plan of a twitter developer account, the limit is one request a second. The delay of each request in the code is 2 seconds, change it by going to main.py and manually change the async time to your desired amount.</p>
 
 ## How to keep the bot active?
-<p>The code will run prefectly on replit but if the session is closed for more than an hour, replit will push the code into a idle state. The bot will enter a sleep mode and can be re-activate by logging back the replit account and open the code.</p>
+<p>The code will run prefectly on replit but if the web session is closed for more than an hour, replit will push the code into a idle state. The bot will enter a sleep mode and can be re-activate by logging back the replit account and open the code.</p>
 <p><b><ins>To prevent the bot to enter sleep mode</ins></b></p>
 <p>Constantly ping your bot, I recommend using <a href=https://uptimerobot.com/>UptimeRobot</a></p>
 <p><b><ins>How to use UptimeRobot</ins></b></p>
