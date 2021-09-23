@@ -40,9 +40,11 @@
 <p><b><ins>How to use UptimeRobot</ins></b></p>
 <p>When running the bot, you will find a box appeared on top of your console/shell showing "running" with a link on top. Copy the link.</p>
 <p>Log into your UptimeRobot account and click on "Add New Monitor" and enter the following.</p>
-<p>Monitor Type: HTTP(s)</p>
-<p>Friendly Name: {Put whatever name your want here}</p>
-<p>URL (or IP): {Put the link mentioned above here}</p>
-<p>Monitoring Interval: under 15 minutes</p>
+<ul>
+<li>Monitor Type: HTTP(s)</li>
+<li>Friendly Name: {Put whatever name your want here}</li>
+<li>URL (or IP): {Put the link mentioned above here}</li>
+<li>Monitoring Interval: under 15 minutes</li>
+</ul>
 <p>Change the rest of the setting to your likings or keep it default</p>
 <p>Click "Create Monitor" and you're done, add the bot to your discord server and start using it.</p>
