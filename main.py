@@ -1,13 +1,13 @@
-import discord
-from discord.ext import commands
-from discord.ext import tasks
-from get_tweet_v2 import get_tweet_id
-import manage_list
-import os
 import asyncio
-from running import running
+import os
+
+import discord
+from discord.ext import commands, tasks
 from replit import db
 
+import manage_list
+from get_tweet_v2 import get_tweet_id
+from running import running
 
 bot = commands.Bot(command_prefix = "-")
 

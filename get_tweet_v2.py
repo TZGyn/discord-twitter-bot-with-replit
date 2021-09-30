@@ -1,7 +1,9 @@
-import tweepy
-import os
-from replit import db
 import datetime
+import os
+
+import tweepy
+from replit import db
+
 
 def retrieve_last_seen_date(username: str, date = None):
     value = db[username]
