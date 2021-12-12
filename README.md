@@ -29,6 +29,7 @@
 <p>follow @{username}, username is the twitter user's unique name, '@' can be ignored</p>
 <p>stopfollow @{username}, unfollows a user in your followed list</p>
 <p>followlist, displays a list of the users you followed in the text channel</p>
+<p>help, displays all command names<p>
 
 ## Custom settings
 <p>On the free plan of a twitter developer account, the limit is one request a second. The delay of each request in the code is 2 seconds, change it by going to main.py and manually change the async time to your desired amount.</p>
