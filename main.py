@@ -14,6 +14,7 @@ bot = commands.Bot(command_prefix = "-")
 # Note:
 # The function name is the command name, change it to your likings
 
+discordcmd_names = ['follow', 'stopfollow', 'followlist', 'mention', 'removemention', 'help']
 
 # Startup message
 @bot.event
@@ -124,6 +125,20 @@ async def followlist(ctx):
         print_follow += "\n"
 
     embed = discord.Embed(title = "#" + str(ctx.message.channel), url = "", description = print_follow, color = discord.Color.blue())
+
+    await ctx.send(embed = embed)
+
+# Command in discord to display all commands
+@bot.command()
+async def help(ctx):
+    help_list = discordcmd_names
+
+    print_help = ""
+    for cmd in sorted(help_list):
+        print_help += cmd
+        print_help += "\n"
+
+    embed = discord.Embed(title = "#" + str(ctx.message.channel), url = "", description = print_help, color = discord.Color.blue())
 
     await ctx.send(embed = embed)
 
