@@ -129,18 +129,19 @@ async def followlist(ctx):
     await ctx.send(embed = embed)
 
 # Command in discord to display all commands
-@bot.command()
-async def help(ctx):
-    help_list = discordcmd_names
+# discord already has a built-in help command
+# @bot.command()
+# async def help(ctx):
+#     help_list = discordcmd_names
 
-    print_help = ""
-    for cmd in sorted(help_list):
-        print_help += cmd
-        print_help += "\n"
+#     print_help = ""
+#     for cmd in sorted(help_list):
+#         print_help += cmd
+#         print_help += "\n"
 
-    embed = discord.Embed(title = "#" + str(ctx.message.channel), url = "", description = print_help, color = discord.Color.blue())
+#     embed = discord.Embed(title = "#" + str(ctx.message.channel), url = "", description = print_help, color = discord.Color.blue())
 
-    await ctx.send(embed = embed)
+#     await ctx.send(embed = embed)
 
 
 # Command in discord to include mentioning when displaying new tweets, ex. (-mention @NotificationGroup)
