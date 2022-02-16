@@ -1,3 +1,6 @@
+# WARNING
+<p>This project is no longer in development</p>
+
 # Twitter notification on discord
 <p>A discord bot that gets the latest tweets and display it in the text channel</p>
 <p><b><ins>How to use the bot</ins></b></p>
@@ -37,7 +40,7 @@
 ## How to keep the bot active?
 <p>The code will run prefectly on replit but if the web session is closed for more than an hour, replit will push the code into a idle state. The bot will enter a sleep mode and can be re-activate by logging back the replit account and open the code.</p>
 <p><b><ins>To prevent the bot to enter sleep mode</ins></b></p>
-<p>Constantly ping your bot, I recommend using <a href=https://uptimerobot.com/>UptimeRobot</a></p>
+<p>Constantly ping your bot, I recommend using <a href=https://uptimerobot.com>UptimeRobot</a></p>
 <p><b><ins>How to use UptimeRobot</ins></b></p>
 <p>When running the bot, you will find a box appeared on top of your console/shell showing "running" with a link on top. Copy the link.</p>
 <p>Log into your UptimeRobot account and click on "Add New Monitor" and enter the following.</p>
