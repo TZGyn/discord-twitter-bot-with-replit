@@ -35,7 +35,7 @@ def get_tweet_id(username: str):
     username = username.strip("@")
     timelines = API.user_timeline(username, count = 1)
     if len(timelines) == 0:
-      return None, username
+        return None, username
     retrieve_last_seen_date(username, timelines[0].created_at)
 
     if timelines[0].created_at > datetime.datetime.strptime(retrieve_last_seen_date(username), "%Y-%m-%d %H:%M:%S"):
