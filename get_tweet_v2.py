@@ -11,8 +11,7 @@ def retrieve_last_seen_date(username: str, date = None):
     if len(value) == 0:
         store_last_seen_date(date, username)
     else:
-        last_seen_date = value
-        return last_seen_date
+        return value
 
 def store_last_seen_date(last_seen_date, username: str):
     value = db[username]
@@ -38,11 +37,12 @@ def get_tweet_id(username: str):
         return None, username
     retrieve_last_seen_date(username, timelines[0].created_at)
 
-    if timelines[0].created_at > datetime.datetime.strptime(retrieve_last_seen_date(username), "%Y-%m-%d %H:%M:%S"):
-        store_last_seen_date(timelines[0].created_at, username)
-        return timelines[0].id, username
-    else:
+    if timelines[0].created_at <= datetime.datetime.strptime(
+        retrieve_last_seen_date(username), "%Y-%m-%d %H:%M:%S"
+    ):
         return None, username
+    store_last_seen_date(timelines[0].created_at, username)
+    return timelines[0].id, username
 
 if __name__ == "__main__":
     print(get_tweet_id(""))

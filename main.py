@@ -38,14 +38,20 @@ async def get_ID():
 				for channel in channel_list:
 					if channel != "":
 						try:
-							value = db["channel_" + str(channel)].value
+							value = db[f"channel_{str(channel)}"].value
 							if len(value) != 0:
 								role = discord.utils.get(bot.get_guild(value[0]).roles, id = value[1])
 								msg = bot.get_channel(int(channel))
-								await msg.send("{} \n".format(role.mention) + username + " just tweeted: https://twitter.com/" + username + "/status/" + str(ids))
+								await msg.send(
+									f"{role.mention} \n{username} just tweeted: https://twitter.com/{username}/status/{str(ids)}"
+								)
+
 						except KeyError:
 							msg = bot.get_channel(int(channel))
-							await msg.send(username + " just tweeted: https://twitter.com/" + username + "/status/" + str(ids))
+							await msg.send(
+								f"{username} just tweeted: https://twitter.com/{username}/status/{str(ids)}"
+							)
+
 			# Change the delay (in seconds) in the bracket
 			await asyncio.sleep(2)
 
@@ -54,7 +60,7 @@ async def get_ID():
 @bot.command()
 async def follow(ctx, arg = "@"):
 	username = arg.strip("@")
-	await ctx.send("Follow this user? [Y/N]: https://twitter.com/" + username)
+	await ctx.send(f"Follow this user? [Y/N]: https://twitter.com/{username}")
 
 	def check(msg):
 		return msg.author == ctx.author and msg.channel == ctx.channel and msg.content.lower() in ["y", "n"]
@@ -73,7 +79,7 @@ async def follow(ctx, arg = "@"):
 
 			channelID = ctx.message.channel.id
 			manage_list.add_channel(channelID, username)
-			await ctx.send("Start getting new tweets from @" + username)
+			await ctx.send(f"Start getting new tweets from @{username}")
 
 		elif msg.content.lower() == "n":
 			await ctx.send("Following cancelled")
@@ -87,7 +93,10 @@ async def follow(ctx, arg = "@"):
 @bot.command()
 async def stopfollow(ctx, arg = "@"):
 	username = arg.strip("@")
-	await ctx.send("Stop follow this channel? [Y/N]: https://twitter.com/" + username)
+	await ctx.send(
+		f"Stop follow this channel? [Y/N]: https://twitter.com/{username}"
+	)
+
 
 	def check(msg):
 		return msg.author == ctx.author and msg.channel == ctx.channel and \
@@ -102,9 +111,9 @@ async def stopfollow(ctx, arg = "@"):
 				user_list.remove(username)
 				db["users"] = user_list
 
-				await ctx.send("Stop getting new tweets from @" + username)
+				await ctx.send(f"Stop getting new tweets from @{username}")
 			else:
-				await ctx.send("Already stopped getting new tweets from @" + username)
+				await ctx.send(f"Already stopped getting new tweets from @{username}")
 
 		elif msg.content.lower() == "n":
 			await ctx.send("Cancelled")
@@ -124,7 +133,13 @@ async def followlist(ctx):
 		print_follow += follow
 		print_follow += "\n"
 
-	embed = discord.Embed(title = "#" + str(ctx.message.channel), url = "", description = print_follow, color = discord.Color.blue())
+	embed = discord.Embed(
+		title=f"#{str(ctx.message.channel)}",
+		url="",
+		description=print_follow,
+		color=discord.Color.blue(),
+	)
+
 
 	await ctx.send(embed = embed)
 
@@ -150,16 +165,16 @@ async def followlist(ctx):
 async def mention(ctx, arg : discord.Role):
 	serverID = ctx.guild.id
 	roleID = arg.id
-	db["channel_" + str(ctx.message.channel.id)] = [serverID, roleID]
-	value = db["channel_" + str(ctx.message.channel.id)].value
+	db[f"channel_{str(ctx.message.channel.id)}"] = [serverID, roleID]
+	value = db[f"channel_{str(ctx.message.channel.id)}"].value
 	role = discord.utils.get(bot.get_guild(value[0]).roles, id = value[1])
-	await ctx.send("mention updated {}".format(role.mention))
+	await ctx.send(f"mention updated {role.mention}")
 
 
 # Command in discord to remove the mentioning
 @bot.command()
 async def removemention(ctx):
-	db["channel_" + str(ctx.message.channel.id)] = []
+	db[f"channel_{str(ctx.message.channel.id)}"] = []
 
 
 # Starts the bot
