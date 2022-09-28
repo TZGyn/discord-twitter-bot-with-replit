@@ -7,17 +7,16 @@ def add_user(user: str):
     
 
 def add_channel(ids: int, user: str):
-    channel_list = db[user + "_server"]
+    channel_list = db[f"{user}_server"]
 
     if channel_list.__contains__(str(ids)) == False:
-        value = db[user + "_server"]
+        value = db[f"{user}_server"]
         value.append(str(ids))
-        db[user + "_server"] = value
+        db[f"{user}_server"] = value
         
 
 def get_channel_id(user: str):
-    channel_list = db[user + "_server"].value
-    return channel_list 
+    return db[f"{user}_server"].value 
 
 
 def get_followlist(channelID):
@@ -26,7 +25,7 @@ def get_followlist(channelID):
     followlist = []
 
     for user in user_list:
-        channel_list = db[user + "_server"]
+        channel_list = db[f"{user}_server"]
 
         if channel_list.__contains__(str(channelID)):
             followlist.append(user)
@@ -37,12 +36,12 @@ def reset_key():
     user_list = db["users"].value
 
     for user in user_list:
-      db[user] = []
-      db[user + "_server"] = []
+        db[user] = []
+        db[f"{user}_server"] = []
 
 def set_key(username):
     db[username] = []
-    db[username + "_server"] = []
+    db[f"{username}_server"] = []
 
 
 def print_value():
